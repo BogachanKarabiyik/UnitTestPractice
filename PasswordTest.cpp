@@ -14,9 +14,25 @@ class PasswordTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
-TEST(PasswordTest, single_letter_password)
+TEST(PasswordTest, std::string pass)
 {
 	Password my_password;
-	int actual = my_password.count_leading_characters("Z");
+	int actual = my_password.count_leading_characters(pass);
 	ASSERT_EQ(1, actual);
+}
+
+int main()
+{
+	PasswordTest pass;
+	TEST(pass, "a");
+	TEST(pass, "aab");
+	TEST(pass, "AAAABBBBB");
+	TEST(pass, "bababab");
+	TEST(pass, "");
+	TEST(pass, " ");
+	TEST(pass, "\n");
+	TEST(pass, "oOo");
+	TEST(pass, "OoO");
+	TEST(pass, "000001");
+	TEST(pass, "iiiiiiiiiiiii");
 }

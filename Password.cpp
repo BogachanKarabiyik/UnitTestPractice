@@ -15,7 +15,7 @@ int Password::count_leading_characters(string phrase){
   while( index < phrase.length()-1 && phrase[index] == phrase[index+1] ){
     repetition++;
     index++;
-  }
+  } 
   return repetition;
 }
 
