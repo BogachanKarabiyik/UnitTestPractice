@@ -35,4 +35,6 @@ int main()
 	TEST(pass, "OoO");
 	TEST(pass, "000001");
 	TEST(pass, "iiiiiiiiiiiii");
+
+	std::cout << unique_characters("aaaAAA");
 }
